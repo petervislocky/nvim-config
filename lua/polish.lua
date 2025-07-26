@@ -3,3 +3,4 @@
 -- fit in the normal config locations above can go here
 
 vim.opt.colorcolumn = { "72", "99" }
+vim.notify = require("noice").notify

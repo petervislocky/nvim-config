@@ -198,4 +198,33 @@ return {
     ---@type NoiceFormatOptions
     format = {}, --- @see section on formatting
   },
+  config = function(_, opts)
+    require("noice").setup(opts)
+
+    -- Gruvbox highlight overrides below
+    local colors = {
+      bg = "#282828",
+      bg_popup = "#3c3836",
+      fg = "#ebdbb2",
+      yellow = "#fabd2f",
+      border = "#d79921",
+      fg_dark = "#a89984",
+    }
+
+    local hl = vim.api.nvim_set_hl
+
+    hl(0, "NoiceCmdlinePopup", { bg = colors.bg, fg = colors.fg })
+    hl(0, "NoiceCmdline", { fg = colors.fg })
+    hl(0, "NoiceCmdlineIcon", { fg = colors.yellow })
+
+    hl(0, "NoicePopupmenu", { bg = colors.bg_popup, fg = colors.fg })
+    hl(0, "NoicePopupmenuBorder", { fg = colors.border })
+
+    hl(0, "NoiceCmdlinePopupBorder", { fg = colors.border })
+
+    hl(0, "NoiceNotify", { bg = colors.bg_popup, fg = colors.fg })
+    hl(0, "NoiceNotifyBorder", { fg = colors.border })
+
+    hl(0, "NoiceVirtualText", { fg = colors.fg_dark })
+  end,
 }
