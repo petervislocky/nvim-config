@@ -4,3 +4,4 @@
 
 vim.opt.colorcolumn = { "72", "88" }
 vim.notify = require("noice").notify
+vim.g.python3_host_prog = vim.fn.expand "~/.venvs/neovim/bin/python"
